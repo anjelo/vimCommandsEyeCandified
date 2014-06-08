@@ -3,6 +3,7 @@
 	<head>
 <script src="./scripts/jquery.min.js"></script>
 <script src="./scripts/main.js"></script>
+<link rel="stylesheet" href="styles/main.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>Vim Commands Cheat Sheet</title>
 <style type="text/css"></style></head>
@@ -10,8 +11,8 @@
 <body>
 <center><h1> Vim Commands Cheat Sheet</h1></center>
 
-<p></p><hr><div class="hexit"><a href="#"><h2>How to Exit</h2></a></div><p>
-<div class="tblExit">
+<div class="hexit hdr"><a name="exit"><h2>How to Exit</h2></a></div>
+<div class="tblExit tbl">
 <table width="100%" >
   <tbody><tr>
     <td>:q[uit]</td>
@@ -56,7 +57,8 @@
 </tbody></table>
 </div>
 
-</p><p></p><hr><a href="#" name="edit" ><h2>Editing a File</h2></a><p>
+<div class="hedit hdr"><a name="edit" ><h2>Editing a File</h2></a></div>
+<div class="tblEdit tbl">
 <table width="100%" >
   <tbody><tr>
     <td>:e[dit]</td>
@@ -79,10 +81,10 @@
     <td>gf</td>
     <td>Edit the file whose name is under or after the cursor.  Mnemonic: "goto file".</td>
   </tr>
-</tbody></table>
+</tbody></table></div>
 
-</p><p></p><hr><a name="insert"><h2>Inserting Text</h2></a><p>
-
+<div class="hinsert hdr"><a name="insert"><h2>Inserting Text</h2></a></div>
+<div class="tblInsert tbl">
 <table width="100%" >
   <tbody><tr>
     <td>a</td>
@@ -113,7 +115,10 @@
     <td>Begin a new line above the cursor and insert text, repeat [count] times.</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><h2>Inserting a file</h2><p>
+</div>
+
+<div class="hinsertf hdr"><h2>Inserting a file</h2></div>
+<div class="tblInsertf tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -125,7 +130,10 @@
     <td>Execute {cmd} and insert its standard output below the cursor. </td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="delete"><h2>Deleting Text</h2></a><p>
+</div>
+
+<div class="hdelete hdr"><a name="delete"><h2>Deleting Text</h2></a></div>
+<div class="tblDelete tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -150,7 +158,7 @@
   </tr>
   <tr>
     <td>{Visual}x  or<br> {Visual}d</td>
-    <td>Delete the highlighted text (for {Visual} see <a href="http://www.fprintf.net/vimCheatSheet.html#select">Selecting Text</a>).</td>
+    <td>Delete the highlighted text (for {Visual} see <a href="#select">Selecting Text</a>).</td>
   </tr>
   <tr>
     <td>{Visual}CTRL-H   or<br> {Visual}<bs></bs></td>
@@ -169,7 +177,11 @@
     <td>Delete {count} lines, starting with [range]</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="replace"><h2>Changing (or Replacing) Text</h2></a><p>
+</div>
+
+<div class="hreplace hdr"><a name="replace"><h2>Changing (or Replacing) Text</h2></a></div>
+
+<div class="tblReplace tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -193,8 +205,10 @@
     <td>Switch case of highlighted text</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="substitute"><h2>Substituting</h2></a><p>
+</div>
 
+<div class="hsubstitute hdr"><a name="substitute"><h2>Substituting</h2></a></div>
+<div class="tblSubstitute tbl">
 <table width="100%" >
   <tbody><tr>
     <td>:[range]s[ubstitute]/{pattern}/{string}/[c][e][g][p][r][i][I] [count]</td>
@@ -206,7 +220,7 @@
     <td>Repeat last :substitute with same search pattern and substitute string, but without the same flags.  You may add extra flags</td>
   </tr>
 </tbody></table>
-</p><pre>The arguments that you can use for the substitute commands:
+<pre>The arguments that you can use for the substitute commands:
 [c]  Confirm each substitution.  Vim positions the cursor on the matching
   string.  You can type:
       'y'      to substitute this match
@@ -224,9 +238,10 @@
 [I]  Don't ignore case for the pattern.  
 [p]  Print the line containing the last substitute.
 </esc></pre>
+</div>
 
-<p></p><hr><a name="move"><h2>Copying and Moving Text</h2></a><p>
-
+<div class="hmove hdr"><a name="move"><h2>Copying and Moving Text</h2></a></div>
+<div class="tblMove tbl">
 <table width="100%" >
   <tbody><tr>
     <td>"{a-zA-Z0-9.%#:-"}</td>
@@ -299,7 +314,11 @@
     line).</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="undo"><h2>Undo/Redo/Repeat</h2></a><p>
+</div>
+
+<div class="hundo hdr"><a name="undo"><h2>Undo/Redo/Repeat</h2></a></div>
+
+<div class="tblUndo tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -328,9 +347,11 @@
     <td>Repeat last change, with count replaced with [count].</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="motion"><h2>Moving Around</h2></a><p>
+</div>
 
-</p><pre>Basic motion commands:
+<div class="hmotion hdr"><a name="motion"><h2>Moving Around</h2></a></div>
+<div class="tblMotion tbl">
+<pre>Basic motion commands:
 
         k              <up>
       h   l      <left>    <right>
@@ -340,19 +361,19 @@
 <p>
 </p><table width="100%" >
   <tbody><tr>
-    <td>h  or<br> <left></left></td>
+    <td>h  or<br> &#8592; </td>
     <td>[count] characters to the left (exclusive).</td>
   </tr>
   <tr>
-    <td>l or<br> <right> or<br> <space></space></right></td>
+    <td>l or<br> &#8594; or<br> &lt;Space&gt; </td>
     <td>[count] characters to the right (exclusive).</td>
   </tr>
   <tr>
-    <td>k  or<br> <up> or<br> CTRL-P</up></td>
+    <td>k  or<br> &#8593; or CTRL-P</td>
     <td>[count] lines upward</td>
   </tr>
   <tr>
-    <td>j or<br> <down> or<br> CTRL-J or<br> <nl> or<br> CTRL-N</nl></down></td>
+    <td>j or<br> &#8595; or CTRL-J or &lt;Enter&gt; or CTRL-N</td>
     <td>[count] lines downward (linewise).</td>
   </tr>
   <tr>
@@ -380,7 +401,7 @@
     <td>When lines wrap ('wrap' on): To the first non-blank character of the screen line (exclusive).  Differs from "^" when a line is wider than the screen.  When lines don't wrap ('wrap' off): To the leftmost non-blank character of the current line that is on the screen.  Differs from "^" when the first non-blank character of the line is not on the screen. </td>
   </tr>
   <tr>
-    <td>g$ or<br> g&lt;End&amp;gr;</td>
+    <td>g$ or<br> g&lt;End&gr;</td>
     <td>When lines wrap ('wrap' on): To the last character of the screen line and [count - 1] screen lines downward (inclusive).  Differs from "$" when a line is wider than the screen.  When lines don't wrap ('wrap' off): To the rightmost character of the current line that is visible on the screen.  Differs from "$" when the last character of the line is not on the screen or when a count is used.</td>
   </tr>
   <tr>
@@ -504,7 +525,10 @@ space.  An empty line is also considered to be a word and a WORD.</p>
     </td>
   </tr>
 </tbody></table>
-<p></p><hr><a name="marks"><h2>Marks</h2></a><p>
+</div>
+
+<div class="hmarks hdr"><a name="marks"><h2>Marks</h2></a></div>
+<div class="tblMarks tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -548,7 +572,10 @@ space.  An empty line is also considered to be a word and a WORD.</p>
     <td>List the marks that are mentioned in {arg} (not a motion command).  For example:</td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="search"><h2>Searching</h2></a><p>
+</div>
+
+<div class="hsearch hdr"><a name="search"><h2>Searching</h2></a></div>
+<div class="tblSearch tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -594,7 +621,11 @@ space.  An empty line is also considered to be a word and a WORD.</p>
     </td>
   </tr>
 </tbody></table>
-</p><p></p><hr><a name="select"><h2>Selecting Text (Visual Mode)</h2></a><p>
+</div>
+
+<div class="hselect hdr"><a name="select"><h2>Selecting Text (Visual Mode)</h2></a></div>
+<div class="tblSelect tbl">
+<p>
 
 </p><p>To select text, enter visual mode with one of the commands below, and use
 <a href="http://www.fprintf.net/vimCheatSheet.html#motion">motion commands</a> to highlight the text you are interested
@@ -625,7 +656,10 @@ in.  Then, use some command on the text. </p>
     <td>exit Visual mode without making any changes</td>
   </tr>
 </tbody></table>
-<p></p><hr><a name="suspend"><h2>How to Suspend</h2></a><p>
+</div>
+
+<div class="hsuspend hdr"><a name="suspend"><h2>How to Suspend</h2></a></div>
+<div class="tblSuspend tbl">
 
 <table width="100%" >
   <tbody><tr>
@@ -637,12 +671,45 @@ in.  Then, use some command on the text. </p>
     <td>Suspend Vim.  If the '!' is not given and 'autowrite' is set, every buffer with changes and a file name is written out.  If the '!' is given or 'autowrite' is not set, changed buffers are not written, don't forget to bring Vim back to the foreground later!</td>
   </tr>
 </tbody></table>
+</div>
+<div class="hdr habout"><h2>About</h2></div>
+<div class="tblAbout tbl">
+Made by ME(anjelo). I made this because I need a Vim cheat sheet that's handy and portable via my Windows Phone. Enjoy!<br/>
+Original content by <a href="http://www.fprintf.net/vimCheatSheet.html">Daniel Gryniewicz</a>
+</div>
 
-</p><hr>
+<!-- <nav id="nav" role="navigation">
+<!--http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
+    <a href="#nav" title="Show navigation">Show navigation</a>
+    <a href="#" title="Hide navigation">Hide navigation</a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/" aria-haspopup="true">Blog</a>
+            <ul>
+                <li><a href="/">Design</a></li>
+                <li><a href="/">HTML</a></li>
+                <li><a href="/">CSS</a></li>
+                <li><a href="/">JavaScript</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/" aria-haspopup="true">Work</a>
+            <ul>
+                <li><a href="/">Web Design</a></li>
+                <li><a href="/">Typography</a></li>
+                <li><a href="/">Front-End</a></li>
+            </ul>
+        </li>
+        <li><a href="/">About</a></li>
+    </ul>
+</nav> -->
 <!-- <a href="http://www.catb.org/hacker-emblem/">
 	<img src="./Vim Commands Cheat Sheet_files/glider.png">
 </a> -->
-<address> Daniel Gryniewicz / <a href="mailto:dang@fprintf.net">dang@fprintf.net</a> </address>
 
+<!-- <aside>asdfka;sdfkasdlkf;alksdmf;alksdmf;alksmdf</aside>
+<address> Daniel Gryniewicz / <a href="mailto:dang@fprintf.net">dang@fprintf.net</a> </address>
+ -->
 
 </body></html>
