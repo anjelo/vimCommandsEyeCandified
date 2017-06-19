@@ -1,7 +1,7 @@
 html, body{
 	color: #ffffff;
 	background-color: #000000;
-	font-family: sans-serif;
+	font-family: 'Segoe UI', sans-serif;
     margin: 0px;
 }
 pre{
@@ -106,4 +106,14 @@ h1{
 .hdr{
 	text-align: center;
 	background-color: #222C28;
+}
+h2{
+    margin: 0;
+    padding: 5px;
+}
+tr td:first-child{
+    font-weight: bold;
+}
+.tbl{
+    margin: 5px 5px 15px 5px;
 }
